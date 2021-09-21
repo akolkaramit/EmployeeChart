@@ -43,8 +43,10 @@ class AddEmployee extends Component {
     const { firstName, lastName, dob, designation, photo, experience } =
       this.state;
 
-    if (this.props.mode && this.props.mode !== "edit") {
-      employees.push({
+    if (this.props.mode === "edit") {
+      // edit
+    } else {
+       employees.push({
         id: uuid(),
         firstName,
         lastName,
@@ -53,8 +55,6 @@ class AddEmployee extends Component {
         photo,
         experience,
       });
-    } else {
-      // edit
     }
   };
 
